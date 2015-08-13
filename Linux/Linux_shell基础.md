@@ -1,5 +1,4 @@
-﻿[TOC]
-## Bourne家族
+﻿## Bourne家族
 
 - sh
 - ksh
