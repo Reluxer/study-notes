@@ -16,44 +16,30 @@ headers = {
 
 data = []
 
-def getPage():
-
+def getData():
     # url = "http://www.zhihu.com/api/v4/members/gong-qing-tuan-zhong-yang-67/followees?include=data%5B%2A%5D.answer_count%2Carticles_count%2Cgender%2Cfollower_count%2Cis_followed%2Cis_following%2Cbadge%5B%3F%28type%3Dbest_answerer%29%5D.topics&limit=20&offset=0"
-    
-
     url = "http://www.zhihu.com/api/v4/members/gong-qing-tuan-zhong-yang-67/followers?include=data%5B%2A%5D.answer_count%2Carticles_count%2Cgender%2Cfollower_count%2Cis_followed%2Cis_following%2Cbadge%5B%3F%28type%3Dbest_answerer%29%5D.topics&limit=20&offset=0"
-
-
     x = 0
+
     while(True):
         x = x + 1
         print('>>> 第{}页, url : {}'.format(x, url))
-
         response = requests.get(url, headers=headers)
-
         response.encoding = 'utf-8'
-
         jsonContent = response.json()
-
         # print(json.dumps(jsonContent, indent=2))
-
         data.extend(jsonContent['data'])
-
         paging = jsonContent['paging']
-
         is_end = paging['is_end']
-        print('是否还有下一页:{}'.format(not is_end))
-
+        # print('是否还有下一页:{}'.format(not is_end))
         if is_end:
             print('结束查询')
             break
-
         url = paging['next']
-
         time.sleep(random.randint(3, 7))
 
 if __name__ == '__main__':
-    getPage()
+    getData()
     df = pd.DataFrame.from_dict(data)
     df.to_csv('users.csv')
 
