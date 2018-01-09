@@ -6,7 +6,7 @@
 
 Windows下安装流程
 
-方法一： 命令行执行`pip install scrapy 安装scrapy`
+方法一： 命令行执行`pip install scrapy` 安装scrapy
 
 注意：如果有miniconda，也可以打开`Anaconda prompt`，激活环境以后使用命令：`conda install scrapy`
 
