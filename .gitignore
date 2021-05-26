@@ -58,3 +58,5 @@ target/
 # ztest/
 .vscode/
 q.png
+
+.idea
