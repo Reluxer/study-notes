@@ -2,6 +2,8 @@
 
 health_check.sh
 
+```shell
+
 #!/bin/bash
 
 VIP=a.a.a.a
@@ -42,3 +44,5 @@ while :; do
     done
     sleep 5
 done
+
+```

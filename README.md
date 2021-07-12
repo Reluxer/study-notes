@@ -5,6 +5,6 @@ http://www.yangzhiping.com/tech/github.html
 
 http://www.yangzhiping.com/tech/github.html
 
-[Linux学习](Linux)
+[Linux学习](linux)
 
-[Some Code Chip](Algorithmic)
+[Some Code Chip](algorithmic)
