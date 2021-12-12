@@ -21,3 +21,21 @@
 9. 人为什么要工作？ 你现在每天在做的工作，你为什么要做这些工作?
 
 10. 你认为是什么样的工作表现好? 什么样的是工作表现不好？
+
+
+11. java进程忽然消失了如何排查
+https://www.cnblogs.com/myseries/p/11766804.html
+https://www.cnblogs.com/rjzheng/p/11317889.html
+可能有几种原因：
+①、Java应用程序的问题：发生OOM导致进程Crash
+最常见的是发生堆内存异常“java.lang.OutOfMemoryError: Java heap space”，排查步骤如下：
+
+Step1: 查看JVM参数 -XX:+HeapDumpOnOutOfMemoryError 和 -XX:HeapDumpPath=*/java.hprof；
+Step2: 根据HeapDumpPath指定的路径查看是否产生dump文件；
+Step3: 若存在dump文件，使用Jhat、VisualVM等工具分析即可；
+②、JVM出错：JVM或JDK自身的Bug导致进程Crash
+当JVM出现致命错误时，会生成一个错误文件 hs_err_pid.log，其中包括了导致jvm crash的重要信息，可以通过分析该文件定位到导致crash的根源，从而改善以保证系统稳定。当出现crash时，该文件默认会生成到工作目录下，然而可以通过jvm参数-XX:ErrorFile指定生成路径。
+
+③被操作系统OOM-Killer
+Step1: 查看操作系统日志：sudo grep –color “java” /var/log/messages，确定Java进程是否被操作系统Kill；
+Step2: 若被操作系统Kill，执行dmesg命令查看系统各进程资源占用情况，明确Java占用内存是否合理，以及是否有其它进程不合理的占用了大量内存空间；
