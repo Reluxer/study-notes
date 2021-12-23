@@ -1,0 +1,83 @@
+/*
+* 题目要求：
+* 1、设置信息容器为相对定位
+* 2、设置信息图片上红点为绝对定位，且距离父级右侧距离为-6px，距离父级上边距离为-6px
+* 3、设置信息的时间文本为绝对定位，且距离父级右侧距离为10px，距离父级上边距离为12px
+*/
+
+.page-msg {
+    max-width: 640px;
+    background: #fff;
+    margin-top: 20px;
+}
+/* 内容区*/
+.msg-item {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 10px 10px 10px 70px;
+    /* TODO: 设置卡片容器为相对定位*/
+    position: relative;
+}
+.msg-item .item-img-wrap {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+}
+.msg-item .item-img {
+    border-radius: 4px;
+}
+.msg-item .icon-tips {
+    background: red;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    transform: scale(0.9);
+    /* TODO: 设置信息图片上红点为绝对定位，且距离父级右侧距离间距为-6px，距离父级上边距离为-6px*/
+    position: absolute;
+    right: -6px;
+    top: -6px;
+}
+.msg-item .tips--one-num {
+    width: 18px;
+}
+.msg-item .tips--more-num {
+    padding: 0 5px;
+}
+.msg-item .tips--only {
+    width: 10px;
+    height: 10px;
+    top: -4px;
+    right: -4px;
+}
+.msg-item .item-text {
+    padding-top: 2px;
+    height: 50px;
+}
+.msg-item .item-title {
+    font-size: 16px;
+    color: #000;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 30px;
+}
+.msg-item .item-time {
+    color: #ddd;
+    line-height: 24px;
+    font-size: 12px;
+    /* TODO: 设置信息的时间为绝对定位，且距离父级右侧距离间距为10px，距离父级上边距离为12px*/
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+.msg-item .item-desc {
+    font-size: 14px;
+    color: #bbb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

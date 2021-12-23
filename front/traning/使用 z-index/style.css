@@ -1,0 +1,154 @@
+/*
+* 题目要求：
+* 1、需设置 header 元素 z-index 属性，让其高于内容的层级，并且数值要大于 9
+*/
+
+.page-msg {
+    max-width: 640px;
+    background: #fff;
+}
+/* 顶部导航栏*/
+.header {
+    position: relative;
+    height: 44px;
+    background-color: #373738;
+    text-align: center;
+    color: #fff;
+    /* TODOS 设置header的 z-index (大于 9) */
+    z-index: 10;
+
+}
+.header-title {
+    font-size: 18px;
+    line-height: 44px;
+}
+/* 弹出窗口 */
+.header .icon-plus {
+    right: 16px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    display: block;
+    background: url(http://coding.imweb.io/img/icons/plus.png) center no-repeat;
+    background-size: 18px;
+}
+.header .popup-ctn {
+    background: #373738;
+    width: 130px;
+    position: absolute;
+    top: 54px;
+    right: 6px;
+    border-radius: 2px;
+}
+.popup-ctn::after {
+    content: '';
+    border-bottom: 7px solid #373738;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    right: 13px;
+    top: -7px;
+}
+.popup-ctn li {
+    position: relative;
+    line-height: 43px;
+    border-bottom: 1px solid #5d5d5d;
+    padding: 0 10px;
+}
+.popup-ctn li:last-child {
+    border-bottom: none;
+}
+.popup-ctn .icon--pic {
+    background: url(http://coding.imweb.io/img/icons/chat.png) no-repeat 100%;
+    background-size: 100%;
+    width: 26px;
+    height: 28px;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+.popup-ctn .popup-item-text {
+    margin-left: 36px;
+    text-align: left;
+}
+
+/* 内容区*/
+.msg-item {
+    position: relative;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 10px 10px 10px 70px;
+    box-sizing: border-box;
+}
+
+.msg-item .item-img-wrap {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.msg-item .item-img {
+    border-radius: 4px;
+}
+
+.msg-item .item-text {
+    padding-top: 2px;
+    height: 50px;
+}
+
+.msg-item .icon-tips {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    transform: scale(0.9);
+}
+
+.msg-item .tips--one-num {
+    width: 18px;
+}
+
+.msg-item .tips--more-num {
+    padding: 0 5px;
+}
+
+.msg-item .tips--only {
+    width: 10px;
+    height: 10px;
+    top: -4px;
+    right: -4px;
+}
+
+.msg-item .item-title {
+    font-size: 16px;
+    color: #000;
+    margin-right: 40px;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.msg-item .item-time {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #ddd;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.msg-item .item-desc {
+    font-size: 14px;
+    color: #bbb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

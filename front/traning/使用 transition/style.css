@@ -1,0 +1,85 @@
+/*
+* 题目要求：
+* 1、设置封面图的过渡的 CSS 属性为 transform, 完成过渡效果的时间为 0.75s
+* 2、设置当鼠标滑过封面图时，其将相对增大1.1倍（使用 scale）
+* 3、设置标题文本的伪类元素（.playlist-item .item-tt:after）的过渡的 CSS 属性为 opacity, 完成过渡效果的时间为 0.75s
+* 4、当鼠标滑过底部描述时，设置标题文本的伪类元素的透明度 opacity 为1
+*/
+
+.playlist-item {
+    float: left;
+    width: 300px;
+    background: rgba(0, 0, 0, .6);
+}
+.playlist-item:hover {
+    background: #31c27c;
+}
+
+.playlist-item .item-bd {
+    overflow: hidden;
+    position: relative;
+}
+.playlist-item .item-img {
+    width: 100%;
+    /* TODO: 设置封面图过渡效果属性 transition */
+    transition:transform 0.75s;
+
+}
+.playlist-item .icon-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.7);
+    width: 70px;
+    height: 70px;
+    background: url(http://coding.imweb.io/img/p3/transition-cover_play.png) no-repeat;
+    opacity: 0;
+}
+.playlist-item .item-bd:hover .item-img {
+    /* TODO: 设置当鼠标滑过封面图,封面图相对增大1.1倍 */
+    transform: scale(1.1);
+}
+.playlist-item .item-bd:hover .icon-play {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+}
+.playlist-item .item-ft {
+    color: #fff;
+    padding: 15px 10px;
+    text-align: center;
+}
+.playlist-item .item-tt {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.playlist-item .item-tt::after {
+    content: "...";
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translate(0, -50%);
+    line-height: 0.6;
+    box-sizing: border-box;
+    opacity: 0;
+    /* TODO: 需设置标题文本的伪类元素的过渡属性（transition） */
+    transition-property: opacity;
+    transition-duration: 0.75s;
+}
+.playlist-item .item-author {
+    color: #999;
+}
+.playlist-item:hover .item-author {
+    color: #c1e9d5;
+}
+.playlist-item:hover .item-tt::after {
+    /* TODO: 当鼠标滑过底部描述时，显示标题文本的伪类元素 */
+    opacity: 1;
+}

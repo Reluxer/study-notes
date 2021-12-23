@@ -1,0 +1,138 @@
+/*
+* 题目要求：
+* 1、需设置 .line-item 元素为 flexbox 布局
+* 2、需设置 .item-bd 元素的 flex 属性为 1
+* 3、需设置底部导航栏为 flexbox 布局
+* 4、需设置底部导航栏的 nav-link 元素平分导航栏容器的剩余空间
+*/
+
+.page-user {
+    max-width: 640px;
+    min-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.line-item {
+    align-items: center;
+    padding: 5px 10px;
+    line-height: 34px;
+    border-bottom: 1px solid #dbdbdb;
+    background: #fff;
+    /* TODO: 需设置 .line-item 元素为 flexbox 布局 */
+    display: flex;
+}
+
+.line-item .item-bd {
+    /* TODO: 需设置 .item-bd 元素的 flex 属性为1 */
+    flex: 1;
+}
+
+.line-item .item-icon {
+    width: 24px;
+    height: 28px;
+    background: url(http://coding.imweb.io/img/icons/setting.png) no-repeat;
+    background-size: 24px 28px;
+    margin-right: 10px;
+}
+
+.line-item .icon-v-right {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #dbdbdb;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+}
+
+.item--only {
+    border: 1px solid #dbdbdb;
+    border-width: 1px 0;
+    margin-bottom: 20px;
+}
+
+.item--user {
+    padding: 10px;
+}
+
+.item--user .item-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.item--user .item-bd {
+    line-height: 2;
+}
+
+.item--user .item-id {
+    font-size: 12px;
+}
+
+.item--user .icon-qrcode {
+    width: 22px;
+    height: 28px;
+    background: url(http://coding.imweb.io/img/icons/qrcode.png) no-repeat;
+    background-size: 22px 28px;
+    margin-right: 10px;
+}
+
+.line-list {
+    border: 1px solid #dbdbdb;
+    border-width: 1px 0;
+    margin-bottom: 20px;
+}
+
+.line-list .line-item:last-child {
+    border-bottom: 0;
+}
+
+/* footer */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background-color: #fff;
+    border-top: 1px solid #dbdbdb;
+}
+
+.nav {
+    /* TODO: 需设置底部导航栏为 flexbox 布局 */
+    display: flex;
+}
+
+.nav-link {
+    text-align: center;
+    position: relative;
+    padding-top: 2px;
+    /* TODO: 需设置底部导航栏的 nav-link 元素平分导航栏容器的剩余空间 */
+    flex-grow: 1;
+}
+
+.nav-link .link-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 26px;
+    height: 28px;
+    background: url(http://coding.imweb.io/img/icons/star.png) no-repeat;
+    background-size: 26px 28px;
+}
+
+.nav-link .link-tt {
+    font-size: 12px;
+}
+
+.nav-link .icon-corner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #f00;
+    top: 4px;
+    left: 50%;
+    margin-left: 8px;
+}
