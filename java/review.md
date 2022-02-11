@@ -39,3 +39,6 @@ Step3: 若存在dump文件，使用Jhat、VisualVM等工具分析即可；
 ③被操作系统OOM-Killer
 Step1: 查看操作系统日志：sudo grep –color “java” /var/log/messages，确定Java进程是否被操作系统Kill；
 Step2: 若被操作系统Kill，执行dmesg命令查看系统各进程资源占用情况，明确Java占用内存是否合理，以及是否有其它进程不合理的占用了大量内存空间；
+
+@Autowired http://www.zzvips.com/article/178076.html determineautowirecandidate
+
