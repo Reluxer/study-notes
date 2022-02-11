@@ -1,0 +1,53 @@
+/*
+* 题目要求：
+* 1、设置卡片的图片高度和宽度为56px
+* 2、设置卡片的图片元素向左浮动
+* 3、设置卡片的标题文本超出一行时，展示省略号(...)
+*/
+
+.music-list {
+    max-width: 640px;
+    background: #fff;
+}
+
+.music-item {
+    border-bottom: 1px solid #ccc;
+    padding: 4px;
+}
+
+/*卡片的图片*/
+
+.music-item .item-img {
+    margin-right: 10px;
+    /* TODO: 设置图片的宽高和向左浮动*/
+    width: 56px;
+    height: 56px;
+    float: left;
+}
+
+/*创建新的BFC*/
+
+.music-item .item-text {
+    overflow: hidden;
+    padding-top: 4px;
+}
+
+.music-item .item-tt {
+    font-size: 18px;
+    color: #000;
+    /* TODO: 设置标题文本超出一行，展示省略号*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.music-item .item-num {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
