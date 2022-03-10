@@ -1,3 +1,8 @@
+# joins
+
+![06693a419be00f294f941bbfb2a72ae5.png](../_resources/06693a419be00f294f941bbfb2a72ae5.png)
+
+
 # 数据存储需求
 
 ![bd3efc32fe79468cc39c5f7d037c34f1.png](../_resources/bd3efc32fe79468cc39c5f7d037c34f1.png)
@@ -121,6 +126,17 @@
   ```
 
 
+- 查看隔离级别
+
+	```
+	show variables like '%tx_isolation%';
+	```
+
+- 修改事务级别
+
+	```
+	SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}
+	```
 
 
 ---
