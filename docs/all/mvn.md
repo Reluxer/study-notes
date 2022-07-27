@@ -157,6 +157,11 @@
 # 探究 Java 应用的启动速度优化
 > https://python.iitter.com/other/168537.html
 
+# 下载源码和javadoc
+
+```shell
+mvn dependency:sources -DdownloadSources=true -DdownloadJavadocs=true
+```
 
 ---
 #mvn #java

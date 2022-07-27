@@ -138,6 +138,50 @@
 	SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}
 	```
 
+- 查看表信息 
+```
+SHOW TABLE STATUS [FROM db_name] [LIKE 'pattern']
+参数：[FROM db_name]  可选，表示查询哪个数据库下面的表信息。
+　　　[LIKE 'pattern'] 可选，表示查询哪些具体的表名。
+   show table status like 'tableName' \G
+Name:  
+    表名称
+Engine:
+    表的存储引擎
+Version:
+    版本
+Row_format:
+    行格式。对于MyISAM引擎，这可能是Dynamic，Fixed或Compressed。动态行的行长度可变，例如Varchar或Blob类型字段。固定行是指行长度不变，例如Char和Integer类型字段
+Rows:
+    表中的行数。对于MyISAM和其他存储引擎，这个值是精确的，对于innoDB存储引擎，这个值通常是估算的
+Avg_row_length:
+    平均每行包括的字节数 
+Data_length:
+    整个表的数据量(以字节为单位)
+Max_data_length:
+    表可以容纳的最大数据量，该值和存储引擎相关
+Index_length:
+    索引占用磁盘的空间大小(以字节为单位)
+Data_free:
+    对于MyISAM引擎，表示已经分配，但目前没有使用的空间。这部分空间包含之前被删除的行，以及后续可以被insert利用到的空间
+Auto_increment:
+    下一个Auto_increment的值
+Create_time:
+    表的创建时间
+Update_time:
+    表的最近更新时间
+Check_time:
+    使用 check table 或myisamchk工具最后一次检查表的时间
+Collation:
+    表的默认字符集和字符排序规则
+Checksum:
+    如果启用，保存的是整个表的实时校验和
+Create_options:
+    创建表时指定的其他选项
+Comment:
+    包含了其他额外信息，对于MyISAM引擎，保存的是表在创建时带的注释。如果表使用的是innodb引擎 ，保存的是InnoDB表空间的剩余空间。如果是一个视图，注释里面包含了VIEW字样。
+```
+
 
 ---
 #MySQL
